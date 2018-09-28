@@ -5,8 +5,8 @@ Random Directed Acyclic Graph (DAG) Generator
 • Reference: H. Topcuoglu, S. Hariri, and M. Wu, “Performance-Effective and Low-Complexity Task Scheduling for Heterogeneous   Computing,” IEEE Trans. Parallel and Distributed Systems, vol. 13, no. 3, pp. 260-274, Mar. 2002
 
 • Dependencies:  
-	1.Tool  dependencies:  Python  2.7.6,  graphviz  
-	2.Python  packages  dependencies:  numpy,  random,  copy,  csv,  graphviz  
+	1.Tool  dependencies:  Python  2.7.6,  graphviz (optional graph visulization package)  
+	2.Python  packages  dependencies:  numpy,  random,  copy,  csv,  graphviz   (optional graph visulization package)
 	
 • Run command:  "python graph_gen.py"
 

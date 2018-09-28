@@ -1,9 +1,13 @@
 #Author: Nirmal Kumbhare
 
-
-
-from graphviz import Digraph
-from graphviz import render
+VIZ_TOOL = 0
+try:
+	from graphviz import Digraph
+	from graphviz import render
+	VIZ_TOOL = 1
+except ImportError:
+	pass
+		
 import numpy as np
 import random as rndm
 import copy
@@ -286,17 +290,18 @@ with open("task_exe_time.csv", "wb") as f:
     writer = csv.writer(f)
     writer.writerows(write_data)
 
-
-dot = Digraph()
-for elem in nodes_list:	
-	#dot.node('t'+str(elem.task_id), 't'+str(elem.task_id))
-	dot.node('T_'+str(elem.task_id))
-edges = []
-for elem in nodes_list:
-	for elem1 in elem.outgoing_edge_node:
-		#edges.extend(['t'+str(elem.task_id)+'t'+str(nodes_list[elem1].task_id)])	
-		dot.edge('T_'+str(elem.task_id), 'T_'+str(nodes_list[elem1].task_id))	
-#dot.edges(edges)	
-file_name= "graph_plot.gv"
-dot.render( file_name, view=True) 			
+#creating visualization of graph
+if VIZ_TOOL == 1:
+	dot = Digraph()
+	for elem in nodes_list:	
+		#dot.node('t'+str(elem.task_id), 't'+str(elem.task_id))
+		dot.node('T_'+str(elem.task_id))
+	edges = []
+	for elem in nodes_list:
+		for elem1 in elem.outgoing_edge_node:
+			#edges.extend(['t'+str(elem.task_id)+'t'+str(nodes_list[elem1].task_id)])	
+			dot.edge('T_'+str(elem.task_id), 'T_'+str(nodes_list[elem1].task_id))	
+	#dot.edges(edges)	
+	file_name= "graph_plot.gv"
+	dot.render( file_name, view=True) 			
 
