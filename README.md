@@ -7,8 +7,11 @@ Random Directed Acyclic Graph (DAG) Generator
 • Dependencies:  
 	1.Tool  dependencies:  Python  2.7.6,  graphviz  
 	2.Python  packages  dependencies:  numpy,  random,  copy,  csv,  graphviz  
+	
 • Run command:  "python graph_gen.py"
+
 • Hard  coded  input  file: "graph.config" 
+
 • Script  output  files:  
 	1.graph_plot.gv.pdf :  DAG  image  
 	2.resource_BW.csv:  Communication  bandwidth  among  processors  
